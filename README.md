@@ -5,6 +5,19 @@ A Go-based automated pipeline to fetch Nintendo Switch ROMs from Telegram (Direc
 ## Project Vision
 The goal is to bridge the gap between Telegram-based ROM sharing and the ease of use of a Tinfoil "Shop". The project is divided into logical milestones to ensure stable delivery.
 
+## Project Progress
+
+- [x] **Milestone 1: Telegram Downloader (Direct Files)**
+  - Automated search and metadata extraction from Telegram bots.
+  - Integration with MariaDB for tracking and MinIO for storage.
+  - Interactive CLI and Docker support.
+  - Title sanitization and retry policies.
+- [ ] **Milestone 2: Torrent Integration** (In Progress)
+  - Native Go torrent client implementation.
+  - Automated download of payloads from tracked torrents.
+- [ ] **Milestone 3: Tinfoil Server**
+- [ ] **Milestone 4: Switch Integration**
+
 ## Roadmap
 
 ### [Milestone 1: Telegram Downloader (Direct Files)](spec.md)
