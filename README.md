@@ -1,4 +1,4 @@
-# Telegram Tinfoil Downloader
+# Foil Pantry (Telegram Tinfoil Downloader)
 
 A Go-based automated pipeline to fetch Nintendo Switch ROMs from Telegram (Direct or Torrent) and serve them directly to a Nintendo Switch via Tinfoil.
 
