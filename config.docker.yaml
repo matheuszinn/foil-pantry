@@ -1,0 +1,20 @@
+database:
+  host: mariadb
+  port: 3306
+  user: tinfoil
+  password: your_secure_password
+  dbname: tinfoil
+
+telegram:
+  api_id: 0 # User must configure their own Telegram api_id
+  api_hash: "" # User must configure their own Telegram api_hash
+  phone: "" # User must configure their own Telegram phone number
+  session_path: /app/session/telegram.session
+  search_bot: "" # User must configure the Telegram bot username to query
+
+minio:
+  endpoint: minio:9000
+  access_key: minioadmin
+  secret_key: your_secure_password
+  bucket: tinfoil
+  use_ssl: false

@@ -1,0 +1,20 @@
+# Binaries
+downloader
+main
+
+# Configuration
+config.yaml
+.env
+
+# Session & Data
+session_file*
+*.session
+*.json
+session/
+
+# IDEs
+.idea/
+.vscode/
+
+# Go
+vendor/
