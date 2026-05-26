@@ -21,14 +21,14 @@ The goal is to bridge the gap between Telegram-based ROM sharing and the ease of
 ## Roadmap
 
 ### [Milestone 1: Telegram Downloader (Direct Files)](spec.md)
-- **Status:** Planning
+- **Status:** Completed ✅
 - **Goal:** Fetch NSP/XCI/NSZ files directly from Telegram messages/forwards.
-- **Tech:** Go, `gotd` (MTProto), Local/MinIO Storage.
+- **Tech:** Go, `gotd` (MTProto), MariaDB, MinIO Storage.
 
 ### [Milestone 2: Torrent Integration](docs/milestones/02-torrent-integration.md)
-- **Status:** Planning
+- **Status:** In Progress 🚧
 - **Goal:** Handle `.torrent` files and Magnet links forwarded from Telegram.
-- **Tech:** `anacrolix/torrent` or Transmission RPC.
+- **Tech:** `anacrolix/torrent`.
 
 ### [Milestone 3: Tinfoil Server (The Shop)](docs/milestones/03-tinfoil-server.md)
 - **Status:** Planning
@@ -39,4 +39,36 @@ The goal is to bridge the gap between Telegram-based ROM sharing and the ease of
 - **Goal:** Connect the physical Switch to the server via Tinfoil.
 
 ## Getting Started
-*Coming soon as Milestone 1 implementation begins.*
+
+### Prerequisites
+- Docker & Docker Compose
+- Telegram API Credentials ([my.telegram.org](https://my.telegram.org))
+
+### Setup
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/matheuszinn/foil-pantry.git
+   cd foil-pantry
+   ```
+
+2. **Configure environment**:
+   ```bash
+   cp config.yaml.example config.yaml
+   # Edit config.yaml with your Telegram api_id, api_hash and phone
+   ```
+
+3. **Spin up dependencies**:
+   ```bash
+   docker compose up -d mariadb minio
+   ```
+
+4. **Run the downloader**:
+   ```bash
+   # Run via Docker
+   docker compose run --rm downloader search "Zelda"
+
+   # Or run locally (requires Go 1.22+)
+   go run cmd/downloader/main.go search "Zelda"
+   ```
+
+On the first run, the application will prompt for your Telegram phone number and verification code to establish a secure session.
